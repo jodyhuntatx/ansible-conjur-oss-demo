@@ -12,7 +12,7 @@ Steps:
 2) Run setup-ansible-demo.sh. This loads a Conjur policy to create an identity with access to two secrets.
 3) Use values in the output from setup script to create a Conjur credential retriever
    * see: https://docs.ansible.com/ansible-tower/3.5.0/html/administration/credential_plugins.html#cyberark-conjur-secret-lookup
-4) Verify the credential retriever can retrieve the aws-access-key and aws-secret-key values
+4) Use the test button to verify the credential retriever can retrieve the aws-access-key and aws-secret-key values
 5) Create an Amazon Web Services credential
    * see: https://docs.ansible.com/ansible-tower/3.5.0/html/userguide/credentials.html#amazon-web-services
 6) Replace the Access Key value with the Conjur Credential Retriever configured to retrieve the aws-access-key value
