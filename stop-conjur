@@ -1,0 +1,4 @@
+#!/bin/bash
+pushd conjur-quickstart > /dev/null
+  docker-compose down -v
+popd > /dev/null
