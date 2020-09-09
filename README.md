@@ -8,6 +8,7 @@
 6) replace the Access Key value with the Conjur Credential Retriever that retrieves the aws-access-key value
 7) replace the Secret Key value with the Conjur Credential Retriever that retrieves the aws-secret-key value
 8) create a job template that uses the AWS credential and runs the following playbook:
+```
 ---
 - hosts: all
   gather_facts: False
@@ -16,8 +17,11 @@
         msg:
         - Access Key is {{ lookup('env', "AWS_ACCESS_KEY_ID") }}
         - Secret Key is {{ lookup('env', "AWS_SECRET_ACCESS_KEY") }}
+```
 9) run the job and examine the output
 10) change the value of one or both variables, e.g.:
+```
 	>> conjur-variable set aws-access-key a-new-value
+```
 11) run the job again and examine the output for the new value.
 
