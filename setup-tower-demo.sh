@@ -42,7 +42,7 @@ function print_ansible_config() {
   echo "DESCRIPTION: Conjur credential retriever w/ Conjur OSS"
   echo "ORGANIZATION: <your org or leave blank>"
   echo "CREDENTIAL TYPE: CyberArk Conjur Secret Lookup"
-  echo "CONJUR URL: https://<Conjur-host-DNS-name>:8443"
+  echo "CONJUR URL: https://proxy:8443"
   echo "USERNAME: host/$TOWER_HOST_NAME"
   echo "API KEY: $TOWER_HOST_API_KEY"
   echo "ACCOUNT: $CONJUR_ACCOUNT"
