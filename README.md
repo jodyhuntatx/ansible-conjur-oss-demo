@@ -3,14 +3,15 @@
 Prerequisites:
  - docker
  - docker-compose
- - Ansible Tower v3.5 or greater (see: https://docs.ansible.com/ansible-tower/3.5.0/html/administration/credential_plugins.html)
+ - Ansible Tower v3.5 or greater
+   * see: https://docs.ansible.com/ansible-tower/3.5.0/html/administration/credential_plugins.html)
 
 Steps:
 1) Run the start-conjur script. This automates the Conjur OSS Quickstart steps.
-   see: https://www.conjur.org/get-started/quick-start/oss-environment/
+   * see: https://www.conjur.org/get-started/quick-start/oss-environment/
 2) Run setup-ansible-demo.sh. This loads a Conjur policy to create an identity with access to two secrets.
-3) Use output from setup script to create a Conjur credential retriever
-   see: https://docs.ansible.com/ansible-tower/3.5.0/html/administration/credential_plugins.html#cyberark-conjur-secret-lookup
+3) Use values in the output from setup script to create a Conjur credential retriever
+   * see: https://docs.ansible.com/ansible-tower/3.5.0/html/administration/credential_plugins.html#cyberark-conjur-secret-lookup
 4) Verify the credential retriever can retrieve the aws-access-key and aws-secret-key values
 5) Create an Amazon Web Services credential
 6) Replace the Access Key value with the Conjur Credential Retriever that retrieves the aws-access-key value
@@ -34,4 +35,3 @@ Steps:
 ```
 11) Re-run the job and verity the output contains the new value.
 12) Your Ansible job now uses dynamically retrieved credentials!
-
