@@ -19,9 +19,10 @@
         - Secret Key is {{ lookup('env', "AWS_SECRET_ACCESS_KEY") }}
 ```
 9) run the job and examine the output
-10) change the value of one or both variables, e.g.:
+10) change the value of one or both variables using the conjur-variable script.
+    e.g.:
 ```
-	>> conjur-variable set aws-access-key a-new-value
+	>> ./conjur-variable set aws-access-key a-new-value
 ```
 11) run the job again and examine the output for the new value.
 
