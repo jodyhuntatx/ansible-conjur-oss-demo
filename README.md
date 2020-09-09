@@ -14,8 +14,9 @@ Steps:
    * see: https://docs.ansible.com/ansible-tower/3.5.0/html/administration/credential_plugins.html#cyberark-conjur-secret-lookup
 4) Verify the credential retriever can retrieve the aws-access-key and aws-secret-key values
 5) Create an Amazon Web Services credential
-6) Replace the Access Key value with the Conjur Credential Retriever that retrieves the aws-access-key value
-7) Replace the Secret Key value with the Conjur Credential Retriever that retrieves the aws-secret-key value
+   * see: https://docs.ansible.com/ansible-tower/3.5.0/html/userguide/credentials.html#amazon-web-services
+6) Replace the Access Key value with the Conjur Credential Retriever configured to retrieve the aws-access-key value
+7) Replace the Secret Key value with the Conjur Credential Retriever configured to retrieve the aws-secret-key value
 8) Create a job template that uses the AWS credential and runs the following playbook:
 ```
 ---
