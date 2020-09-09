@@ -1,13 +1,21 @@
-# Ansible & Conjur OSS Quickstart
+# Ansible Tower & Conjur OSS Quickstart
 
-1) run start-conjur
-2) run setup-ansible-demo.sh
-3) use output from setup script to create a Conjur credential retriever
-4) verify the credential retriever can retrieve the aws-access-key and aws-secret-key values
-5) create an Amazon Web Services credential
-6) replace the Access Key value with the Conjur Credential Retriever that retrieves the aws-access-key value
-7) replace the Secret Key value with the Conjur Credential Retriever that retrieves the aws-secret-key value
-8) create a job template that uses the AWS credential and runs the following playbook:
+Prerequisites:
+ - docker
+ - docker-compose
+ - Ansible Tower v3.5 or greater (see: https://docs.ansible.com/ansible-tower/3.5.0/html/administration/credential_plugins.html)
+
+Steps:
+1) Run the start-conjur script. This automates the Conjur OSS Quickstart steps.
+   see: https://www.conjur.org/get-started/quick-start/oss-environment/
+2) Run setup-ansible-demo.sh. This loads a Conjur policy to create an identity with access to two secrets.
+3) Use output from setup script to create a Conjur credential retriever
+   see: https://docs.ansible.com/ansible-tower/3.5.0/html/administration/credential_plugins.html#cyberark-conjur-secret-lookup
+4) Verify the credential retriever can retrieve the aws-access-key and aws-secret-key values
+5) Create an Amazon Web Services credential
+6) Replace the Access Key value with the Conjur Credential Retriever that retrieves the aws-access-key value
+7) Replace the Secret Key value with the Conjur Credential Retriever that retrieves the aws-secret-key value
+8) Create a job template that uses the AWS credential and runs the following playbook:
 ```
 ---
 - hosts: all
@@ -18,11 +26,12 @@
         - Access Key is {{ lookup('env', "AWS_ACCESS_KEY_ID") }}
         - Secret Key is {{ lookup('env', "AWS_SECRET_ACCESS_KEY") }}
 ```
-9) run the job and examine the output
-10) change the value of one or both variables using the conjur-variable script.
+9) Run the job and examine the output
+10) Change the value of one or both variables using the conjur-variable script.
     e.g.:
 ```
 	>> ./conjur-variable set aws-access-key a-new-value
 ```
-11) run the job again and examine the output for the new value.
+11) Re-run the job and verity the output contains the new value.
+12) Your Ansible job now uses dynamically retrieved credentials!
 
