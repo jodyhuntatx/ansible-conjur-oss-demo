@@ -1,6 +1,7 @@
 # Ansible Tower & Conjur OSS Quickstart
 
 Prerequisites:
+ - jq
  - docker
  - docker-compose
  - Ansible Tower v3.5 or greater
