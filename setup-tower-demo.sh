@@ -43,9 +43,9 @@ function print_ansible_config() {
   echo "ORGANIZATION: <your org or leave blank>"
   echo "CREDENTIAL TYPE: CyberArk Conjur Secret Lookup"
   echo "CONJUR URL: https://proxy:8443"
-  echo "USERNAME: host/$TOWER_HOST_NAME"
   echo "API KEY: $TOWER_HOST_API_KEY"
   echo "ACCOUNT: $CONJUR_ACCOUNT"
+  echo "USERNAME: host/$TOWER_HOST_NAME"
   echo "PUBLIC KEY CERTIFICATE:" 
   openssl s_client -showcerts -connect localhost:8443 < /dev/null 2> /dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' 
   echo "Variable names:"
