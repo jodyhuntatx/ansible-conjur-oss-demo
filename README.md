@@ -35,5 +35,5 @@ Steps:
 ```
 	>> ./conjur-variable set aws-access-key a-new-value
 ```
-11) Re-run the job and verity the output contains the new value.
+11) Re-run the job and verify the output contains the new value.
 12) Your Ansible job now uses dynamically retrieved credentials!
