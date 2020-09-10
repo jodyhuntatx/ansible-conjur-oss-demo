@@ -15,7 +15,7 @@ export IMAGES="svagi/openssl:latest
 export CONJUR_ACCOUNT=myConjurAccount
 
 main() {
-  ./stop
+  ./stop-conjur
   1_setup_a_conjur_oss_environment
   2_define_policy
   3_store_a_secret_in_conjur

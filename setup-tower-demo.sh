@@ -32,8 +32,8 @@ function initialize_variables() {
   | docker exec -i conjur_client conjur policy load root - \
   > /dev/null 2>&1
   TOWER_HOST_API_KEY=$(docker exec conjur_client conjur host rotate_api_key -h $TOWER_HOST_NAME)
-  ./conjur_variable set $AWS_ACCESS_KEY_NAME my-aws-access-key
-  ./conjur_variable set $AWS_SECRET_KEY_NAME my-aws-secret-key
+  ./conjur-variable set $AWS_ACCESS_KEY_NAME my-aws-access-key
+  ./conjur-variable set $AWS_SECRET_KEY_NAME my-aws-secret-key
 }
 
 ################################
