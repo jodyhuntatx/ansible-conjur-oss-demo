@@ -38,11 +38,14 @@ function initialize_variables() {
 
 ################################
 function print_ansible_config() {
+  CONJUR_IP_ADDRESS=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
+
   echo "NAME: Conjur Credential Retriever"
   echo "DESCRIPTION: Conjur credential retriever w/ Conjur OSS"
   echo "ORGANIZATION: <your org or leave blank>"
   echo "CREDENTIAL TYPE: CyberArk Conjur Secret Lookup"
   echo "CONJUR URL: https://proxy:8443"
+  echo "CONJUR IP ADDRESS: $CONJUR_IP_ADDRESS"
   echo "API KEY: $TOWER_HOST_API_KEY"
   echo "ACCOUNT: $CONJUR_ACCOUNT"
   echo "USERNAME: host/$TOWER_HOST_NAME"
